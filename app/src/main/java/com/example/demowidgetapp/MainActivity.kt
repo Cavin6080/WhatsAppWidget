@@ -9,12 +9,24 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.glance.GlanceModifier
+import androidx.glance.background
+import androidx.glance.layout.Alignment
+import androidx.glance.layout.fillMaxSize
+import androidx.glance.text.FontWeight
+import androidx.glance.text.TextStyle
+import androidx.glance.unit.ColorProvider
 import com.example.demowidgetapp.ui.theme.DemoWidgetAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,8 +53,14 @@ fun Greeting(
 ) {
     Column {
         (Modifier
-            .fillMaxHeight(0.5F))
+            .fillMaxHeight(0.5F).padding(all = 16.dp))
+        Text(
+            text = "1",
+            modifier = modifier,
+            textAlign = TextAlign.Center
+        )
         Row {
+
 
             Text(
                 text = "1",
@@ -89,12 +107,13 @@ fun Greeting(
         }
 
     }
+
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     DemoWidgetAppTheme {
-        Greeting("Cavin")
+        Greeting("Cavin",Modifier.padding(all = 8.dp))
     }
 }
